@@ -1,4 +1,55 @@
-/* Add these styles to your existing CSS */
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f5f5f5;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: #555;
+  border-radius: 4px;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -6,37 +57,166 @@
 }
 
 .menu-toggle span {
+  background: #fff;
   height: 2px;
   width: 25px;
-  background: #fff;
   margin-bottom: 4px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
-.nav-active {
-  display: flex !important;
-  flex-direction: column;
+/* Hero Section */
+#home {
+  background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.toggle span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.hero-content {
+  max-width: 600px;
 }
 
-.toggle span:nth-child(2) {
-  opacity: 0;
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.toggle span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+.btn {
+  background: #007BFF;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Projects Section */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: flex;
+  }
+
   nav ul {
       display: none;
       flex-direction: column;
+      gap: 0;
   }
 
-  .menu-toggle {
+  nav ul.showing {
       display: flex;
+  }
+
+  nav ul li {
+      text-align: center;
+      margin: 0.5rem 0;
+  }
+
+  #home {
+      height: auto;
+      padding: 4rem 1rem;
   }
 }
